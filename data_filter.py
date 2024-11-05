@@ -1,11 +1,11 @@
 # data_filter.py
 
 # Usage example: 
-# filter_data("../Devices.csv",  "../UID.csv", 
-  "ECMO-a-24h.csv", 
-  "NOMEPRESIDIO", "=", "ECMO", 
-  "DATAINIZIO", "<=", 1440,
-   show=True)
+#   filter_data("../Devices.csv",  "../UID.csv", 
+#   "ECMO-a-24h.csv", 
+#   "NOMEPRESIDIO", "=", "ECMO", 
+#   "DATAINIZIO", "<=", 1440,
+#    show=True)
        
 
 
