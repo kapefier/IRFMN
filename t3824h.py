@@ -22,3 +22,8 @@ new_df = df.drop(columns=['VALORE', 'DATASTART']).drop_duplicates(subset='UID')
 
 # Display the first few rows of the new DataFrame
 print(new_df.head())
+
+uids=pd.read_csv('../UID.csv', usecols=[1])
+df = pd.read_csv("01_Temperatura.csv")
+t38in24_uids = df[(df['VALORE'] >= 38) & (df['DATASTART'] < 1440)]['UID'].tolist()
+uids['t38in24h'] = uids.UID.map(lambda x: x in t38in24_uids)
