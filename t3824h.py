@@ -21,7 +21,7 @@ print(f"Percentage of pts: {((uids['t38in24h'].sum() / uids.shape[0]) * 100):.2f
 # Set Plot
 labels = ['True', 'False']
 sizes = [total_true, total_uids - total_true]
-colors = ['lightred', 'lightgreen']
+colors = ['red', 'lightgreen']
 explode = (0.1, 0)  # explode the 1st slice (True)
 
 # Plot
