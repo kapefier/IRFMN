@@ -1,29 +1,32 @@
 import csv
 import os
 import pandas as pd
+import matplotlib.pyplot as plt
 
 df = pd.read_csv("01_Temperatura.csv")
 df.head()
  
-t38df = df[(df['VALORE'] >= 38) & (df['DATASTART'] < 1440)]['UID'].drop_duplicates()
-  for uid in t38df:
-     print(uid)
-
-print("\nCount:", t38df.nunique())
-df['t38df'] = df.groupby('UID').apply(lambda x: ((x['VALORE'] >= 38) & (x['DATASTART'] < 1440)).any()).astype(int).values
-t38df = df.drop_duplicates(subset='UID', keep='first').copy
-print( t38df[t38df['t38in24h'] == 1)
-
-# Create the new column 't38df' which contains True if VALORE for every single UID is at least one time >= 38 and DATASTART is < 1440
-df['t38df'] = df.groupby('UID').apply(lambda x: ((x['VALORE'] >= 38) & (x['DATASTART'] < 1440)).any()).reset_index(drop=True)
-
-# Create a new DataFrame without the 'VALORE' and 'DATASTART' columns, and with unique UIDs
-new_df = df.drop(columns=['VALORE', 'DATASTART']).drop_duplicates(subset='UID')
-
-# Display the first few rows of the new DataFrame
-print(new_df.head())
-
+# filter early hypertemic patients
 uids=pd.read_csv('../UID.csv', usecols=[1])
 df = pd.read_csv("01_Temperatura.csv")
 t38in24_uids = df[(df['VALORE'] >= 38) & (df['DATASTART'] < 1440)]['UID'].tolist()
 uids['t38in24h'] = uids.UID.map(lambda x: x in t38in24_uids)
+
+# Print the results
+print(f"N of pts with temp recorded: {uids.shape[0]}")
+print(f"Early hyperthermia (temp >= 38 °C within the first 24 hours)")
+print(f"N of pts: {uids['t38in24h'].sum()} ")
+print(f"Percentage of pts: {((uids['t38in24h'].sum() / uids.shape[0]) * 100):.2f}%")
+
+# Set Plot
+labels = ['True', 'False']
+sizes = [total_true, total_uids - total_true]
+colors = ['lightred', 'lightgreen']
+explode = (0.1, 0)  # explode the 1st slice (True)
+
+# Plot
+uids_sorted = uids.sort_values(by='UID')
+plt.figure(figsize=(8, 8))
+plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=140)
+plt.title('Early Hypertermia')
+plt.show()
