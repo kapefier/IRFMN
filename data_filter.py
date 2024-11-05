@@ -58,4 +58,4 @@ def filter_data(csv_path, uid_path, output_csv, filter_variable, operator, filte
         plt.show()
 
 # Example usage
-filter_data("../Devices.csv", "../UID.csv", "filtereddevices.csv", filter_variable='NOMEPRESIDIO', operator='=', filter_value="Tubo", data_variable="DATAINIZIO", data_threshold=440)
+#filter_data("../Devices.csv", "../UID.csv", "filtereddevices.csv", filter_variable='NOMEPRESIDIO', operator='=', filter_value="Tubo", data_variable="DATAINIZIO", data_threshold=440)
