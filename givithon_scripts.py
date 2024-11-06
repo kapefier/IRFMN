@@ -76,5 +76,5 @@ def extract(csv_path, uid_path, output_csv, filter_variable, filter_operator, fi
         # Plot
         plt.figure(figsize=(4, 4))
         plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=140)
-        plt.title(filter_value+" "+data_operator+" "+str(data_value)+" minuti")
+        plt.title(filter_value+" "+data_operator+" "+str(data_value)+" minutes")
         plt.show()
