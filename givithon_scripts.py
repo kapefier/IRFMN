@@ -8,8 +8,8 @@
 #    show=True)
 
 # Usage example:
-#  csvmerge(['file1', 'file2', 'file3'], 'merged_output.csv')
-#  filenames with no suffix
+#  csvmerge(['file1', 'file2', 'file3'], 'merged_output')
+#  filenames with no suffix... appending .csv
 
 import csv
 import pandas as pd
@@ -153,4 +153,4 @@ def csvmerge(files, output_file):
         else:
             merged_df = pd.merge(merged_df, df, on='UID', suffixes=('', f'_{files.index(file)}'))
 
-    merged_df.to_csv(output_file, index=False)
+    merged_df.to_csv(f'{output_file}.csv', index=False)
