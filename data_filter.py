@@ -37,7 +37,7 @@ def filter_data(csv_path, uid_path, output_csv, filter_variable, filter_operator
         
     # Define data function based on operator
     if data_operator == '=':
-        data_ondition = df[data_variable] == data_value
+        data_condition = df[data_variable] == data_value
     elif data_operator  == '>':
         data_condition = df[data_variable] > data_value
     elif data_operator  == '<':
