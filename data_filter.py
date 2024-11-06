@@ -6,9 +6,6 @@
 #   "NOMEPRESIDIO", "=", "ECMO", 
 #   "DATAINIZIO", "<=", 1440,
 #    show=True)
-       
-
-
 
 import csv
 import os
