@@ -142,9 +142,7 @@ def extract_old(csv_path, uid_path, output_csv, filter_variable, filter_operator
 def csvmerge(files, output_file):
     
     files = [f"{file}.csv" for file in files]
-    
     merged_df = pd.DataFrame()
-
     
     for file in files:
         df = pd.read_csv(file)
