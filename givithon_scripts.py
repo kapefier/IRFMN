@@ -134,3 +134,15 @@ def extract_old(csv_path, uid_path, output_csv, filter_variable, filter_operator
         plt.title(filter_value+" "+data_operator+" "+str(data_value)+" minutes")
         plt.show()
 
+def csvmerge(file1, file2, output_file):
+
+    df1 = pd.read_csv(file1)
+    df2 = pd.read_csv(file2)
+    
+    # Merge the DataFrames on the 'UID' column
+    merged_df = pd.merge(df1, df2, on='UID')
+    # Save the merged DataFrame to a new CSV file
+    merged_df.to_csv(output_file, index=False)
+ 
+# Usage example:
+# merge_csv_by_uid('file1.csv', 'file2.csv', 'merged_output.csv')
