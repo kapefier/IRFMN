@@ -8,7 +8,8 @@
 #    show=True)
 
 # Usage example:
-#  csvmerge('file1.csv', 'file2.csv', 'merged_output.csv')
+#  csvmerge(['file1', 'file2', 'file3'], 'merged_output.csv')
+#  filenames with no suffix
 
 import csv
 import pandas as pd
@@ -137,15 +138,19 @@ def extract_old(csv_path, uid_path, output_csv, filter_variable, filter_operator
         plt.title(filter_value+" "+data_operator+" "+str(data_value)+" minutes")
         plt.show()
 
-def csvmerge(file1, file2, output_file):
 
-    df1 = pd.read_csv(file1)
-    df2 = pd.read_csv(file2)
+def csvmerge(files, output_file):
     
-    # Merge the DataFrames on the 'UID' column
-    merged_df = pd.merge(df1, df2, on='UID')
-    # Save the merged DataFrame to a new CSV file
+    files = [f"{file}.csv" for file in files]
+    
+    merged_df = pd.DataFrame()
+
+    
+    for file in files:
+        df = pd.read_csv(file)
+        if merged_df.empty:
+            merged_df = df
+        else:
+            merged_df = pd.merge(merged_df, df, on='UID', suffixes=('', f'_{files.index(file)}'))
+
     merged_df.to_csv(output_file, index=False)
- 
-# Usage example:
-# merge_csv_by_uid('file1.csv', 'file2.csv', 'merged_output.csv')
