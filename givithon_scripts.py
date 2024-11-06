@@ -7,6 +7,9 @@
 #   "DATAINIZIO", "<=", 1440,
 #    show=True)
 
+# Usage example:
+#  csvmerge('file1.csv', 'file2.csv', 'merged_output.csv')
+
 import csv
 import pandas as pd
 import matplotlib.pyplot as plt
