@@ -130,7 +130,7 @@ def extract_old(csv_path, uid_path, output_csv, filter_variable, filter_operator
         # Set Plot
         labels = ['True', 'False']
         sizes = [total_true, total_uids - total_true]
-        colors = ['white', '#1E90FF']  # Use hex colors for better distinction
+        colors = ['#1E90FF','white']  # Use hex colors for better distinction
         explode = (0.1, 0)
         
         # Plot
