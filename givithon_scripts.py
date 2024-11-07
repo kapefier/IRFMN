@@ -67,7 +67,7 @@ def extract(csv_path, uid_path, output_csv, filter_variable, filter_operator, fi
 
         # Plot using Seaborn
         sns.set(style='whitegrid')
-        plt.figure(figsize=(6, 6))
+        plt.figure(figsize=(4, 4))
         plt.pie(sizes, explode=[0.1, 0], labels=labels, colors=['#1E90FF', 'white'], autopct='%1.1f%%', shadow=True, startangle=140, textprops={'fontsize': 9})
         plt.title(f"{filter_value} {data_operator} {str(data_value)} minutes", fontsize=12, fontweight='bold')
         plt.show()
