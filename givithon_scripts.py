@@ -59,16 +59,16 @@ def extract(csv_path, uid_path, output_csv, filter_variable, filter_operator, fi
         print(f"N of pts: {total_true} ")
         print(f"Percentage of pts: {percentage_true:.2f}%")
 
-        # Set Plot
+       # Set Plot
         labels = ['True', 'False']
         sizes = [total_true, total_uids - total_true]
-        colors = ['red', 'lightgreen']
+        colors = ['#1E90FF','white']  # Use hex colors for better distinction
         explode = (0.1, 0)
-    
+        
         # Plot
-        plt.figure(figsize=(4, 4))
-        plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=140)
-        plt.title(f"{filter_value} {data_operator} {data_value} minutes")
+        plt.figure(figsize=(4, 4), dpi=120)  # Increased figure size and DPI
+        plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=140, textprops={'fontsize': 9}) 
+        plt.title(f"{filter_value} {data_operator} {str(data_value)} minutes", fontsize=8, fontweight='bold') 
         plt.show()
 
 def extract_old(csv_path, uid_path, output_csv, filter_variable, filter_operator, filter_value, data_variable, data_operator, data_value, show=True):
