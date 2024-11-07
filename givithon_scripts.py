@@ -130,13 +130,13 @@ def extract_old(csv_path, uid_path, output_csv, filter_variable, filter_operator
         # Set Plot
         labels = ['True', 'False']
         sizes = [total_true, total_uids - total_true]
-        colors = ['#white', '#151854']  # Use hex colors for better distinction
+        colors = ['white', '#1E90FF']  # Use hex colors for better distinction
         explode = (0.1, 0)
         
         # Plot
-        plt.figure(figsize=(6, 6), dpi=120)  # Increased figure size and DPI
-        plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=140, textprops={'fontsize': 12})  # Adjusted text size
-        plt.title(f"{filter_value} {data_operator} {str(data_value)} minutes", fontsize=14, fontweight='bold')  # Adjusted title font size and weight
+        plt.figure(figsize=(4, 4), dpi=120)  # Increased figure size and DPI
+        plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=140, textprops={'fontsize': 10}) 
+        plt.title(f"{filter_value} {data_operator} {str(data_value)} minutes", fontsize=12, fontweight='bold') 
         plt.legend(labels, loc="best")  # Added legend
         plt.show()
 
