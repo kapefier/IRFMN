@@ -13,6 +13,8 @@
 
 import csv
 import pandas as pd
+import matplotlib.pyplot as plt
+
 # import os
 
 
@@ -72,9 +74,7 @@ def extract(csv_path, uid_path, output_csv, filter_variable, filter_operator, fi
 
 
 def extract_plt(csv_path, uid_path, output_csv, filter_variable, filter_operator, filter_value, data_variable, data_operator, data_value, show=True):
-    
-    import matplotlib.pyplot as plt
- 
+  
     df = pd.read_csv(csv_path)
     uids = pd.read_csv(uid_path, usecols=[1])
     
