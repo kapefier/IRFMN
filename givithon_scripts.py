@@ -135,9 +135,8 @@ def extract_old(csv_path, uid_path, output_csv, filter_variable, filter_operator
         
         # Plot
         plt.figure(figsize=(4, 4), dpi=120)  # Increased figure size and DPI
-        plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=140, textprops={'fontsize': 10}) 
-        plt.title(f"{filter_value} {data_operator} {str(data_value)} minutes", fontsize=12, fontweight='bold') 
-        plt.legend(labels, loc="best")  # Added legend
+        plt.pie(sizes, explode=explode, labels=labels, colors=colors, autopct='%1.1f%%', shadow=True, startangle=140, textprops={'fontsize': 9}) 
+        plt.title(f"{filter_value} {data_operator} {str(data_value)} minutes", fontsize=8, fontweight='bold') 
         plt.show()
 
 
