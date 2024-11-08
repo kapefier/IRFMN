@@ -1,13 +1,16 @@
 # givithon_scripts_new.py
 
 # Usage example:
-#   extractor = Extractor("../Devices.csv",  "../UID.csv",
+#  
+#  extractor = Extractor("../Devices.csv",  "../UID.csv",
 #   "NOMEPRESIDIO", "=", "ECMO",
 #   "DATAINIZIO", "<=", 1440)
 #   extractor.save("output.csv", show=True)
 #
-# Usage example:
 #   merge(['file1', 'file2', 'file3'], 'merged_output')
+#   filenames with no suffix... appending .csv
+
+#   combine('combined_output', [extractor1, extractor2, extractor3])
 
 import matplotlib.pyplot as plt
 import pandas as pd
