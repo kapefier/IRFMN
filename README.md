@@ -3,16 +3,16 @@ Code used for data extraction/transformation/loading from M3DB in preparation fo
 
 ## - data_filter.py
 Contains the function 
-**filter_data**(csv_path, uid_path, output_csv, filter_variable, filter_operator, filter_value, data_variable, data_operator, data_value, show=True)
+**filter_data**(csv_path, uid_path, output_csv, filter_variable, filter_operator, filter_value, date_variable, date_operator, date_value, show=True)
 
 Arguments:
 - csv_path= path to input dataset
 - uid_path= path to UID mapper
 - output_csv = path to output dataset 
-- filter_variable = 
-- filter_operator = 
-- filter_value =
-- data_variable =
-- data_operator =
-- data_value =
+- filter_variable = Drugs? Devices?
+- filter_operator = >, <, ...
+- filter_value = you choose
+- date_variable = which date?
+- date_operator = >, <, ...
+- date_value = you choose
 - show = boolean, plot a graph.
