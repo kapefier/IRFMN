@@ -2,7 +2,7 @@
 Code used for data extraction/transformation/loading from M3DB in preparation for the presentation entitled **"Neuroprognostication after cardiac arrest: Working hypothesis with a multistate Markov model"**, GiVITI Meeting 2024.
 
 ## - data_filter.py
-Contains the function 
+Contains the function below:
 **filter_data**(csv_path, uid_path, output_csv, filter_variable, filter_operator, filter_value, date_variable, date_operator, date_value, show=True)
 
 Arguments:
@@ -16,3 +16,8 @@ Arguments:
 - date_operator = >, <, ...
 - date_value = you choose
 - show = boolean, plot a graph.
+
+## - giviti.scripts_new.py
+Contains the functions below:
+- **extract**(csv_path, uid_path, output_csv, filter_variable, filter_operator, filter_value, date_variable, date_operator, date_value, show=True)
+- **csvmerge** (files, output_file)
