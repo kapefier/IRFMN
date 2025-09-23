@@ -22,5 +22,5 @@ Contains the functions below:
 - **extract**(csv_path, uid_path, output_csv, filter_variable, filter_operator, filter_value, date_variable, date_operator, date_value, show=True)
 - **csvmerge**(files, output_file)
 
-## - t2824h.py
+## - t3824h.py
 Deprecated extraction function.
