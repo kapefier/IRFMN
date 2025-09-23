@@ -23,4 +23,4 @@ Contains the functions below:
 - **csvmerge**(files, output_file)
 
 ## - t2824h.py
-Depracated extraction function.
+Deprecated extraction function.
